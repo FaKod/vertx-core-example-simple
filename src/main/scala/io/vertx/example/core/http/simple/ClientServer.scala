@@ -14,10 +14,11 @@ object VertxImplicits {
 
 }
 
-object Client {
-  def main(args: Array[String]) {
-    Runner.runExample(classOf[Client])
-  }
+
+
+
+object Client extends App {
+  Runner.runExample(classOf[Client])
 }
 
 class Client extends AbstractVerticle {
@@ -35,10 +36,11 @@ class Client extends AbstractVerticle {
   }
 }
 
-object Server {
-  def main(args: Array[String]) {
-    Runner.runExample(classOf[Server])
-  }
+
+
+
+object Server extends App {
+  Runner.runExample(classOf[Server])
 }
 
 class Server extends AbstractVerticle {
