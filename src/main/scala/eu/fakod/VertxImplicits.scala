@@ -15,6 +15,8 @@ object VertxImplicits {
 
   implicit class ToAsyncResultWrapper[T](ar: AsyncResult[T]) {
     def wrap: AsyncResultWrapper[T] = if (ar.succeeded) Success(ar.result) else Failure(ar.cause())
+
+    def onComplete[That](f: PartialFunction[AsyncResultWrapper[T], That]): Unit = f(wrap)
   }
 
 }
