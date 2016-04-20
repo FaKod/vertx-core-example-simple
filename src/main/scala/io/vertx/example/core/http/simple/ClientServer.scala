@@ -1,19 +1,10 @@
 package io.vertx.example.core.http.simple
 
+import eu.fakod.VertxImplicits
 import io.vertx.core.buffer.Buffer
-import io.vertx.core.{Handler, AbstractVerticle}
-import io.vertx.core.http.{HttpServerRequest, HttpClientResponse}
+import io.vertx.core.{AbstractVerticle, Handler}
+import io.vertx.core.http.{HttpClientResponse, HttpServerRequest}
 import io.vertx.example.util.Runner
-
-object VertxImplicits {
-
-  implicit def toHandler[T, that](f: T => that): Handler[T] =
-    new Handler[T] {
-      override def handle(event: T): Unit = f(event)
-    }
-
-}
-
 
 
 
